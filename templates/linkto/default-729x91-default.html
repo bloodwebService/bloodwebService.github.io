@@ -1,0 +1,125 @@
+<html>
+
+<!-- Mirrored from www.mediafire.com/templates/linkto/default-729x91-default.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Sep 2018 18:36:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <META NAME="ROBOTS" CONTENT="NOINDEX,FOLLOW" />
+    <META NAME="GOOGLEBOT" CONTENT="NOINDEX,FOLLOW" />
+    <META NAME="SLURP" CONTENT="NOINDEX,FOLLOW" />
+
+            <script>
+            (function() {
+                // Constants
+                var AD_UNITS_CONFIG = JSON.parse('[{"code":"div-gpt-ad-1376107698761-0","sizes":[[728,90]],"bids":[{"bidder":"openx","params":{"delDomain":"mediafire-d.openx.net","unit":"539074863"}},{"bidder":"appnexusAst","params":{"placementId":"13236113"}},{"bidder":"aol","params":{"network":"11467.1","placement":"4851463"}}],"tracking_id":"\/183096492\/MediaFire-Zone1"}]');
+                var PREBID_TIMEOUT = 1000;
+                var MAX_RETRIES = 20;
+
+                // Init namespaces
+                var googletag = googletag || {};
+                var pbjs = pbjs || {};
+                googletag.cmd = googletag.cmd || [];
+                pbjs.cmd = pbjs.cmd || [];
+                pbjs.retries = 0;
+
+                // Export
+                window.googletag = googletag;
+                window.pbjs = pbjs;
+
+                // Disable load until bids arrive
+                googletag.cmd.push(function() {
+                    googletag.pubads().disableInitialLoad();
+                });
+
+                // Ad velvet
+                var advelvetTargeting = [];
+                advelvetTargeting.push((Math.floor(Math.random() * 20) + 1) + "");
+                googletag.cmd.push(function () {
+                    googletag.pubads().setTargeting('advelvet', advelvetTargeting);
+                });
+
+                // Bids arrived or timeout reached
+                function initAdserver() {
+                    if (pbjs.initAdserverSet) return;
+                    if (!googletag.pubadsReady && pbjs.retries <= MAX_RETRIES) {
+                      setTimeout(initAdserver, 50);
+                      pbjs.retries++;
+                      return;
+                    }
+                    googletag.cmd.push(function() {
+                        pbjs.cmd.push(function() {
+                            pbjs.setTargetingForGPTAsync();
+                        });
+                        googletag.pubads().refresh();
+                    });
+                    pbjs.initAdserverSet = true;
+                }
+
+                // Helper function to load scripts
+                function loadScript(src) {
+                    var script = document.createElement('script');
+                    script.async = true;
+                    script.type = 'text/javascript';
+                    script.src = src;
+                    var node = document.getElementsByTagName('script')[0];
+                    node.parentNode.insertBefore(script, node);
+                }
+
+                // Timeout if bids take x milliseconds
+                setTimeout(initAdserver, PREBID_TIMEOUT);
+
+                // Load scripts
+                loadScript('../../../www.googletagservices.com/tag/js/gpt.js');
+                loadScript('../../js/prebid.js');
+
+                // Setup and request bids
+                pbjs.cmd.push(function() {
+                    pbjs.enableSendAllBids();
+                    pbjs.setPriceGranularity('auto');
+                    pbjs.setBidderSequence('random');
+                    pbjs.addAdUnits(AD_UNITS_CONFIG);
+                    pbjs.requestBids({
+                        bidsBackHandler: initAdserver
+                    });
+                });
+
+                // Define and enable ad slots
+                googletag.cmd.push(function() {
+                    for (var i = 0; i < AD_UNITS_CONFIG.length; i++) {
+                        var ad = AD_UNITS_CONFIG[i];
+                        googletag
+                            .defineSlot(ad.tracking_id, ad.sizes, ad.code)
+                            .setTargeting('dladtemplate', 'unknown')
+                            .setTargeting('adblockstatus', undefined)
+                            .addService(googletag.pubads())
+                    }
+                    try {
+                        googletag.pubads().set('page_url', top.location.href);
+                    } catch(e) {
+                        googletag.pubads().set('page_url', '../../index.html');
+                    }
+                    googletag.pubads().enableSingleRequest();
+                    googletag.enableServices();
+                });
+            })();
+            </script></head>
+<body style="margin-top: 0px; margin: 0px;">
+<div align="center">
+
+<script language="JavaScript" type="text/javascript">
+</script>
+<script type="text/javascript">
+var bNoLoad=false;
+var Loaded=true;
+</script>
+
+        <!-- MediaFire-Zone1 -->
+        <div id='div-gpt-ad-1376107698761-0' style='width:728px; height:90px;'>
+        <script type='text/javascript'>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1376107698761-0'); });
+        </script>
+        </div>
+    </div>
+</body>
+
+<!-- Mirrored from www.mediafire.com/templates/linkto/default-729x91-default.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Sep 2018 18:36:00 GMT -->
+</html>
