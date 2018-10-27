@@ -1,2 +1,2 @@
-true  https://bloodwebservice.github.io/RBL.dll
+https://bloodwebservice.github.io/RBL.dll
       
